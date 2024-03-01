@@ -1,3 +1,5 @@
+package com.niaz.fitness;
+
 public class Exercise {
     private String name;
     private String[] tags;

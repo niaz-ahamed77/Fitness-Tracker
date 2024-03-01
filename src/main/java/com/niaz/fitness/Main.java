@@ -1,3 +1,4 @@
+package com.niaz.fitness;
 import javax.swing.JFrame;
 
 class Main{
