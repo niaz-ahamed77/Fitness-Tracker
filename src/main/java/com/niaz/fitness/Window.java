@@ -10,9 +10,13 @@ public class Window {
     private JFrame frame;
     private ProgramData programData;
     private Workout currentWorkout;
+    private Database database;
 
     Window(){
-        programData = new ProgramData();
+        // Instantiate the Database and ProgramData classes
+        this.database = new Database();
+        this.programData = new ProgramData();
+
         //1. Create the frame.
         this.frame = new JFrame("Fitness Tracker");
 
@@ -37,38 +41,48 @@ public class Window {
         JButton b2 = new JButton("Workouts");
         this.frame.getContentPane().add(b1, BorderLayout.NORTH);
         this.frame.getContentPane().add(b2, BorderLayout.SOUTH);
-        ActionListener buttonListener  = new ActionListener(){
+        ActionListener buttonListener = new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 NewWorkout();
                 System.out.println("click!");
             }};
-            ActionListener buttonListener2  = new ActionListener(){
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    System.out.println("click2!");
-                }};
-                
-                
-                b1.addActionListener(buttonListener);
-                b2.addActionListener(buttonListener2);
-                frame.revalidate();
-                frame.repaint();
-            }
+        ActionListener buttonListener2 = new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("click2!");
+            }};
+            
+        b1.addActionListener(buttonListener);
+        b2.addActionListener(buttonListener2);
+        frame.revalidate();
+        frame.repaint();
+        }
             
     public void NewWorkout(){
-        currentWorkout = new Workout();
+        currentWorkout = new Workout(); // should this be here as it isn't "window logic"?
         frame.getContentPane().removeAll();
         JButton b1 = new JButton("Back");
+        JButton b2 = new JButton("Add Exercise");
         this.frame.getContentPane().add(b1, BorderLayout.NORTH);
+        this.frame.getContentPane().add(b2, BorderLayout.CENTER);
 
-            ActionListener buttonListener  = new ActionListener(){
+            ActionListener buttonListener = new ActionListener(){
                 @Override
                 public void actionPerformed(ActionEvent e) {
                 System.out.println("You just clicked 'Back'");
                 MainMenu();
             }};
+
+            ActionListener buttonListener2 = new ActionListener(){
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                System.out.println("You just clicked 'Add Exercise'");
+                
+            }};
+
         b1.addActionListener(buttonListener);
+        b2.addActionListener(buttonListener2);
         frame.revalidate();
         frame.repaint();
     }

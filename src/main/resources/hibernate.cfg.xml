@@ -1,0 +1,27 @@
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://fitness-db.ch6sagqig4xn.us-east-2.rds.amazonaws.com:3306/fitness-db</property>
+        <property name="connection.username">admin</property>
+        <property name="connection.password">bfxU5UOX97R</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Update the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- List of annotated classes -->
+        <mapping class="com.niaz.fitness.Exercise"/>
+        <!-- Add more classes here -->
+
+    </session-factory>
+</hibernate-configuration>
