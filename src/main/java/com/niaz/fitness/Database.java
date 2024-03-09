@@ -18,7 +18,7 @@ public class Database {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction(); // Begin transaction
             Exercise exercise = new Exercise("Squats");
-            session.save(exercise);
+            // session.save(exercise);
             transaction.commit(); // Commit
         } catch (Exception e) {
             if (transaction != null) {

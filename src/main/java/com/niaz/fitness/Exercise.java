@@ -33,6 +33,10 @@ public class Exercise {
 
 
     //Constructors
+    Exercise(){
+
+    }
+    
     Exercise(String name){
         this.name = name;
     }
@@ -47,8 +51,11 @@ public class Exercise {
     }
 
     //Setters
-    public void setName(){
+    public void setName(String name){
         this.name = name;
     }
 
+    public String toString(){
+        return this.name;
+    }
 }

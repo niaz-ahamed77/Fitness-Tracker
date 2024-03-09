@@ -20,6 +20,11 @@ public class ExerciseState {
         
     }
 
+    // Getter methods
+    public ArrayList<Integer> getSets(){
+        return this.sets;
+    }
+
     // Setter methods
     public void setIntensity(int index, String intensity){
         this.intensity.set(index, intensity);
@@ -37,13 +42,6 @@ public class ExerciseState {
         this.repsDone.set(index, repsDone);
     }
 
-    public void print(){
-        String out = "[";
-        for (int i = 0; i < this.sets.size(); i++) {
-            out += this.sets.get(i)+", ";
-        }
-        out += "]";
-        System.out.println("Reps:" + out);
-    }
+
 
 }
